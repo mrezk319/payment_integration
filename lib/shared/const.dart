@@ -3,10 +3,11 @@ String apiKey =
 
 String firstToken = "";
 String orderId = "";
-String finalTokenCard = "";
+String finalToken = "";
 String finalTokenKiosc = "";
 
 String refCode = "";
 
 String CardId = "2521030";
+String MobileWlletId = "2535473";
 String KioskId = "2521033";

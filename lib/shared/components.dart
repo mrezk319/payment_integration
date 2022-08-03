@@ -32,3 +32,11 @@ class TextInput extends StatelessWidget {
     );
   }
 }
+
+PreferredSizeWidget? AppBarr() => AppBar(
+      title: const Text(
+        "Payment Integration",
+      ),
+      centerTitle: true,
+      backgroundColor: Colors.deepPurpleAccent,
+    );
