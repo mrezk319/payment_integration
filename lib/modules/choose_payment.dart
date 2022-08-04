@@ -90,7 +90,7 @@ class ChoosePayment extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(18.0),
                           child: Text(
-                            "Mobile",
+                            "Mobile Wallet",
                             style: TextStyle(fontSize: 25),
                           ),
                         )

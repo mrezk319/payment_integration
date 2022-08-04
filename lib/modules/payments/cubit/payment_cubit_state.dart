@@ -20,3 +20,7 @@ class FailLastToken extends PaymentCubitState {}
 class LoadingKioskCode extends PaymentCubitState {}
 class SuccessKioskCode extends PaymentCubitState {}
 class FailKioskCode extends PaymentCubitState {}
+
+class LoadingMobileWallet extends PaymentCubitState {}
+class SuccessMobileWallet extends PaymentCubitState {}
+class FailMobileWallet extends PaymentCubitState {}

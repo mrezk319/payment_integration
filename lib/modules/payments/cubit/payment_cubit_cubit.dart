@@ -114,8 +114,9 @@ class PaymentCubitCubit extends Cubit<PaymentCubitState> {
         print("Kiosk");
         getKioskCode(context);
       } else if (isVisa == false && isKiosk == false) {
-        print("Modile");
-        x = MobileWlletId;
+        print("Mobile");
+        getMobileWallet(context);
+        
       }
       ;
     }).catchError((E) {
@@ -145,4 +146,28 @@ class PaymentCubitCubit extends Cubit<PaymentCubitState> {
       emit(FailKioskCode());
     });
   }
+
+
+    getMobileWallet(context) async {
+    emit(LoadingMobileWallet());
+    DioHelper.postData(url: "acceptance/payments/pay", data: {
+      "payment_token": finalToken,
+      "source": {"identifier": "wallet mobile number", "subtype": "WALLET"}
+    }).then((value) {
+      print(value.toString());
+      var redirect_url= value.data["iframe_redirection_url"].toString();
+      print("Redirect Url ==> $redirect_url");
+      emit(SuccessMobileWallet());
+     Navigator.pushReplacement<void, void>(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) => WebViewExample(
+                  url: redirect_url),
+            ));
+    }).catchError((E) {
+      print(E);
+      emit(FailMobileWallet());
+    });
+  }
+
 }

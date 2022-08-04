@@ -22,6 +22,10 @@ class KioskScreen extends StatelessWidget {
           code.toString(),
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
         ),
+         Text(
+          "The code will expire after 1 hour!",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+        ),
       ]),
     );
   }
